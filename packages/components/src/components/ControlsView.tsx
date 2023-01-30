@@ -91,7 +91,7 @@ export const ControlsView = ({
     const enabled = room.localParticipant.isScreenShareEnabled;
     screenButton = (
       <ControlButton
-        label={enabled ? 'Stop sharing' : 'Share screen'}
+        label={enabled ? '停止共享' : '共享屏幕'}
         icon={enabled ? faStop : faDesktop}
         disabled={screenButtonDisabled}
         onClick={() => {
@@ -111,7 +111,7 @@ export const ControlsView = ({
       {screenButton}
       {onLeave && (
         <ControlButton
-          label="End"
+          label="结束"
           className={styles.dangerButton}
           onClick={() => {
             room.disconnect();

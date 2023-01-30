@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export const PreJoinPage = () => {
   // initial state from query parameters
   const searchParams = new URLSearchParams(window.location.search);
-  const storedUrl = searchParams.get('url') ?? 'ws://localhost:7880';
+  const storedUrl = searchParams.get('url') ?? 'wss://livekit.abxy.fun';
   const storedToken = searchParams.get('token') ?? '';
 
   // state to pass onto room
@@ -85,8 +85,7 @@ export const PreJoinPage = () => {
 
     if (
       window.location.protocol === 'https:' &&
-      url.startsWith('ws://') &&
-      !url.startsWith('ws://localhost')
+      !url.startsWith('wss://')
     ) {
       alert('Unable to connect to insecure websocket from https');
       return;
@@ -129,17 +128,17 @@ export const PreJoinPage = () => {
   return (
     <div className="prejoin">
       <main>
-        <h2>LiveKit Video</h2>
+        <h2>LiveKit 视频会议</h2>
         <hr />
         <div className="entrySection">
           <div>
-            <div className="label">LiveKit URL</div>
+            <div className="label">LiveKit 服务器地址</div>
             <div>
               <input type="text" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
             </div>
           </div>
           <div>
-            <div className="label">Token</div>
+            <div className="label">安全令牌</div>
             <div>
               <input
                 type="text"
@@ -203,7 +202,7 @@ export const PreJoinPage = () => {
           </div>
           <div className="right">
             <ControlButton
-              label="Connect"
+              label="连接"
               disabled={connectDisabled}
               icon={faBolt}
               onClick={connectToRoom}
@@ -212,12 +211,12 @@ export const PreJoinPage = () => {
         </div>
       </main>
       <footer>
-        This page is built with <a href="https://github.com/livekit/livekit-react">LiveKit React</a>
+        {/* This page is built with <a href="https://github.com/livekit/livekit-react">LiveKit React</a>
         &nbsp; (
         <a href="https://github.com/livekit/livekit-react/blob/master/example/src/PreJoinPage.tsx">
           source
         </a>
-        )
+        ) */}
       </footer>
     </div>
   );

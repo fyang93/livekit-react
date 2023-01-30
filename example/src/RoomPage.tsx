@@ -50,7 +50,7 @@ export const RoomPage = () => {
     <DisplayContext.Provider value={displayOptions}>
       <div className="roomContainer">
         <div className="topBar">
-          <h2>LiveKit Video</h2>
+          <h2>LiveKit 视频会议</h2>
           <div className="right">
             <div>
               <input
@@ -58,7 +58,7 @@ export const RoomPage = () => {
                 type="checkbox"
                 onChange={(e) => updateOptions({ showStats: e.target.checked })}
               />
-              <label htmlFor="showStats">Show Stats</label>
+              <label htmlFor="showStats">显示状态栏</label>
             </div>
             <div>
               <button
