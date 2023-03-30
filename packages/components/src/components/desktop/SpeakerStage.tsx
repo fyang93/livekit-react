@@ -24,14 +24,14 @@ export const SpeakerStage = ({
   }, [participants, sortFn]);
 
   if (error) {
-    return <div>error {error.message}</div>;
+    return <div>错误 {error.message}</div>;
   }
 
   if (isConnecting) {
-    return <div>connecting</div>;
+    return <div>连接中</div>;
   }
   if (!room) {
-    return <div>room closed</div>;
+    return <div>房间已关闭</div>;
   }
 
   if (sortedParticipants.length === 0) {

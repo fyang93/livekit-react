@@ -103,7 +103,7 @@ export const RoomPage = () => {
               simulcast: isSet(query, 'simulcast'),
             },
             videoCaptureDefaults: {
-              resolution: VideoPresets.h720.resolution,
+              resolution: VideoPresets.h1080.resolution,
             },
           }}
           onLeave={onLeave}

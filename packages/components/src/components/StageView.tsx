@@ -55,7 +55,7 @@ export const StageView = (stageProps: StageProps) => {
             }}
           >
             <FontAwesomeIcon className={styles.icon} size="1x" icon={faVolumeMute} />
-            Click to Unmute
+            点击解除静音
           </button>
         </div>
       )}
